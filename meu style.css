@@ -1,0 +1,127 @@
+ @charset "UTF-8";
+
+ 
+
+       
+   body{ background-color:  rgb(14, 40, 156);}
+
+   main{
+      background-color:  black ;  
+      font: normal 15px Arial, Verdana, Serif;
+      padding:15px 20px 100% 20px;
+      border-radius: 10px;
+
+      min-width: 320px;
+      max-width: 1000px;
+      margin: auto;
+   }
+
+    div#menu ul {
+        list-style: none;
+        display:flex;
+         
+    }
+    
+   
+    div#menu ul li a {
+        display: flex;
+        padding: 10px 10px 10px;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+        
+    }
+
+       div#menu ul li a:hover {
+        background-color: rgb(79, 146, 201);
+        border-radius: 10px;
+        text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.548);
+    }
+
+    div#menu {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        background-color: rgb(10, 13, 177);
+        font-size: 20px;
+        font-weight: bold;
+        
+    }
+
+
+   h1#titulo{ 
+        text-align:justify;
+        font-size: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-shadow: 4px 4px 4px rgb(113, 163, 209);
+        
+   }
+
+    h1{ text-align: justify;
+        color: #f7fbfc;
+        font-size: 50px;
+        font-style:  oblique;
+        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.678);
+    }
+    h2{
+        color: white;
+        background-image: linear-gradient(to right,black,rgba(65, 105, 214, 0.74)); text-align: left;
+        border-radius: 10px;
+        box-shadow: 5px 5px 5px rgb(23, 39, 128);
+        font-size: 27px ;
+    }
+
+    img{
+       width: 40%;
+       padding: 0px 15px;
+       float:right;
+    }
+
+    a{
+        color: rgb(150, 174, 253);
+        text-align: left;
+        font-size: 20px;
+        text-decoration: none;
+        
+    }
+
+    p#pag01{
+        background-color: black;
+        font-size: 23px;
+        text-align: justify;
+        color: #bfd9eb;
+        text-indent: 20px;
+        text-align: left;
+        padding: 25px px 25px 10px;
+        text-shadow: 5px 5px 5px rgba(53, 130, 230, 0.575);
+
+    }
+
+     p{ background-color: black;
+        font-size: 23px;
+        text-align: justify;
+        color: #f7fbfc;
+    
+    }
+    
+    ul#habilidades{
+        color: white;
+        font-size: 25px;
+    }
+    div#certificados{
+        background-color: rgb(31, 31, 165);
+        font-size: 20px;
+        border-radius: 10px;
+        width: 200px;
+        text-indent: 40px;
+    }
+    div#certificados>a{
+        display: none;
+        background-color: rgb(71, 132, 245);
+        color: black;
+        border-radius: 5px;
+    }
+    div#certificados:hover>a{
+        display: flex;
+    }
