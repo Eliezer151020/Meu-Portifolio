@@ -1,34 +1,252 @@
 <!DOCTYPE html>
-<html lang="pt=br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="meu style.css">
-    <title>Meu portifólio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eliezer Silva | Fullstack Developer</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0a0a0a;color:#fff;scroll-behavior:smooth}
+
+/* NAV */
+nav{
+ position:fixed;top:0;width:100%;
+ display:flex;justify-content:space-between;
+ padding:20px 40px;background:rgba(0,0,0,0.8);
+ backdrop-filter:blur(10px);z-index:1000
+}
+nav h1{color:#00ffcc}
+nav a{margin-left:20px;color:#fff;text-decoration:none}
+nav a:hover{color:#00ffcc}
+
+/* HERO */
+.hero{
+ height:100vh;display:flex;flex-direction:column;
+ justify-content:center;align-items:center;
+ text-align:center;padding:20px
+}
+.hero h2{font-size:3rem}
+.hero span{color:#00ffcc}
+.hero p{margin-top:15px;color:#aaa}
+
+/* FOTO PERFIL AVANÇADA */
+.profile-wrapper{
+ position:relative;
+ width:170px;
+ height:170px;
+ margin-bottom:20px;
+}
+
+.profile-wrapper::before{
+ content:"";
+ position:absolute;
+ inset:-5px;
+ border-radius:50%;
+ background:linear-gradient(45deg,#00ffcc,transparent,#00ffcc);
+ animation:rotate 4s linear infinite;
+ z-index:0;
+}
+
+.profile-wrapper img{
+ width:100%;
+ height:100%;
+ border-radius:50%;
+ object-fit:cover;
+ object-position:50% 30%; /* ajusta o rosto */
+ position:relative;
+ z-index:1;
+ border:3px solid #0a0a0a;
+ box-shadow:0 0 20px #00ffcc;
+ transition:0.4s;
+}
+
+.profile-wrapper img:hover{
+ transform:scale(1.08);
+ box-shadow:0 0 35px #00ffcc;
+}
+
+@keyframes rotate{
+ from{transform:rotate(0deg)}
+ to{transform:rotate(360deg)}
+}
+
+.btn{
+ margin-top:20px;padding:12px 25px;
+ background:#00ffcc;color:#000;border:none;
+ cursor:pointer;border-radius:5px
+}
+
+section{padding:100px 20px;max-width:1200px;margin:auto}
+h2{text-align:center;margin-bottom:40px;color:#00ffcc}
+
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:25px
+}
+
+.card{
+ background:#111;padding:25px;border-radius:12px;
+ transition:.4s;opacity:0;transform:translateY(40px)
+}
+.card.show{opacity:1;transform:translateY(0)}
+.card:hover{transform:translateY(-10px);box-shadow:0 0 25px #00ffcc}
+
+.skills li{margin:8px 0;color:#ccc}
+
+/* FOOTER */
+footer{text-align:center;padding:30px;border-top:1px solid #222;color:#777}
+
+/* WHATS */
+.whatsapp{
+ position:fixed;bottom:20px;right:20px;
+ background:#00ffcc;color:#000;
+ padding:15px;border-radius:50%;font-weight:bold
+}
+
+
+@keyframes float{
+  0%{transform:translateY(0px)}
+  50%{transform:translateY(-15px)}
+  100%{transform:translateY(0px)}
+}
+
+</style>
 </head>
 <body>
-    <main>
-    <div id="menu">
-      <ul>
-          <li><a href="pag003.html">projetos</a></li>
 
-          <li><a href="pag002.html"    >habilidades</a></li>
+<nav>
+  <h1>Eliezer</h1>
+  <div>
+    <a href="#home">Início</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projetos</a>
+    <a href="#contact">Contato</a>
+  </div>
+</nav>
 
-         <li><a href="pag004.html">contato</a></li>
+<section class="hero" id="home" style="position:relative;min-height:100vh;display:flex;align-items:center;padding:40px;overflow:hidden;">
+
+  <!-- FUNDO COMPLETO SEM CORTE -->
+  <div style="position:absolute;inset:0;background:url('WhatsApp Image 2026-04-08 at 09.43.56.jpeg') no-repeat center center/contain;background-color:#000;z-index:0;background-attachment:fixed;"></div>
+
+  <!-- OVERLAY PARA CONTRASTE -->
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.2) 100%);z-index:0;"></div>
+
+  <!-- CONTEÚDO -->
+  <div style="position:relative;z-index:1;max-width:600px;">
+    <h2 style="font-size:3rem;line-height:1.2;">
+      Transformando ideias em <span>soluções digitais</span>
+    </h2>
+
+    <p style="margin-top:20px;color:#ccc;font-size:1.1rem;">
+      Desenvolvedor Fullstack especializado em criar sistemas modernos, rápidos e escaláveis.
+    </p>
+
+    <button class="btn" onclick="scrollToSection('projects')">Ver Projetos</button>
+  </div>
+
+  <!-- PARTICULAS -->
+  <canvas id="particles" style="position:absolute;inset:0;z-index:0;"></canvas>
+
+</section>
+
+<section id="skills">
+  <h2>Habilidades</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Front-end</h3>
+      <ul class="skills">
+        <li>HTML5</li>
+        <li>CSS3</li>
+        <li>JavaScript</li>
+        <li>React</li>
       </ul>
     </div>
 
-    <h1 id="titulo"><small>Olá,eu sou </small><br>
-    Eliezer da Silva Souza <br>
-     <small>Engenheiro de Software</small></h1>
-       
-    <picture>
-       <source media="(max-width:600px )" srcset="imagens/Imagem do WhatsApp media.jpg">
-       <img src="imagens/Imagem do WhatsApp de 2025-12-04 à(s) 07.24.00_14a0da74.jpg" alt="imagem do WhatsApp.jpg">
-     </picture>
-    
-     <p id="pag01">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor nostrum vero sed, dicta at modi accusantium? Eum molestias, error tempora nisi quam enim molestiae iure iste modi odio delectus impedit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit nostrum soluta veritatis autem quae itaque, sint nam maiores repudiandae voluptates eligendi optio explicabo exercitationem adipisci, molestias vitae ipsa laborum accusamus.</p>
+    <div class="card">
+      <h3>Back-end</h3>
+      <ul class="skills">
+        <li>PHP Moderno</li>
+        <li>POO PHP</li>
+        <li>MySQL</li>
+      </ul>
+    </div>
 
-    </main>
+    <div class="card">
+      <h3>Ferramentas</h3>
+      <ul class="skills">
+        <li>Git & GitHub</li>
+        <li>WordPress</li>
+        <li>SEO</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projetos</h2>
+  <div class="grid" id="repos"></div>
+</section>
+
+<section id="contact">
+  <h2>Contato</h2>
+  <div class="grid">
+    <div class="card show">
+      <p>WhatsApp</p>
+      <a href="https://wa.me/5551997477650" target="_blank">Conversar</a>
+    </div>
+
+    <div class="card show">
+      <p>Instagram</p>
+      <a href="https://instagram.com/eliezer_silva5" target="_blank">Acessar</a>
+    </div>
+
+    <div class="card show">
+      <p>GitHub</p>
+      <a href="https://github.com/Eliezer151020" target="_blank">Ver Perfil</a>
+    </div>
+  </div>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5551997477650" target="_blank">W</a>
+
+<footer>
+  <p>© 2026 Eliezer Silva</p>
+</footer>
+
+<script>
+
+function scrollToSection(id){
+ document.getElementById(id).scrollIntoView({behavior:'smooth'})
+}
+
+const cards = document.querySelectorAll('.card');
+window.addEventListener('scroll', () => {
+ cards.forEach(card => {
+   const top = card.getBoundingClientRect().top;
+   if(top < window.innerHeight - 50){
+     card.classList.add('show');
+   }
+ });
+});
+
+fetch('https://api.github.com/users/Eliezer151020/repos')
+.then(res => res.json())
+.then(data => {
+ const repos = document.getElementById('repos');
+ data.slice(0,6).forEach(repo => {
+   repos.innerHTML += `
+   <div class="card show">
+     <h3>${repo.name}</h3>
+     <p>${repo.description || 'Projeto profissional'}</p>
+     <a href="${repo.html_url}" target="_blank" style="color:#00ffcc">Ver projeto</a>
+   </div>`;
+ });
+});
+
+</script>
+
 </body>
 </html>
