@@ -1,5 +1,11 @@
 
+/* =========================================
+   PORTFÓLIO ELIEZER SILVA
+   DESIGN DARK + VERDE NEON
+========================================= */
+
 /* CONFIGURAÇÕES GERAIS */
+
 * {
   margin: 0;
   padding: 0;
@@ -9,11 +15,14 @@
 
 html {
   scroll-behavior: smooth;
+  background: #000;
 }
 
 body {
-  background: #0a0a0a;
+  min-height: 100vh;
+  background: #000;
   color: #fff;
+  overflow-x: hidden;
 }
 
 a {
@@ -21,10 +30,13 @@ a {
 }
 
 section {
+  position: relative;
+  z-index: 1;
   padding: 100px 20px;
   max-width: 1200px;
   margin: auto;
-  scroll-margin-top: 65px;
+  scroll-margin-top: 80px;
+  background: transparent;
 }
 
 h2 {
@@ -34,19 +46,94 @@ h2 {
   font-size: 2rem;
 }
 
-/* NAVEGAÇÃO */
+
+/* =========================================
+   IMAGEM FIXA NO FUNDO DO SITE
+========================================= */
+
+/*
+ A foto permanece fixa na tela.
+ O conteúdo do portfólio passa por cima.
+*/
+
+body::before {
+  content: "";
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background-image:
+    url("WhatsApp Image 2026-04-08 at 09.43.56.jpeg");
+
+  background-repeat: no-repeat;
+
+  /* Fotografia posicionada à direita */
+  background-position: 100% 55px;
+
+  /* Mantém proporção da fotografia */
+  background-size: auto 100vh;
+
+  /* Remove a divisão visual do fundo */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.5) 50%,
+    black 70%
+  );
+
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 30%,
+    rgba(0, 0, 0, 0.5) 50%,
+    black 70%
+  );
+
+  opacity: 0.95;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   REMOVE OS FUNDOS ANTIGOS
+========================================= */
+
+.hero-background,
+.hero-overlay {
+  display: none !important;
+}
+
+
+/* =========================================
+   NAVEGAÇÃO
+========================================= */
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 20px;
   padding: 20px 40px;
+
   background: rgba(0, 0, 0, 0.85);
+
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
   z-index: 1000;
 }
 
@@ -71,52 +158,43 @@ nav a:hover {
   color: #00ffcc;
 }
 
-/* HERO */
+
+/* =========================================
+   PÁGINA INICIAL - HERO
+========================================= */
+
 .hero {
   position: relative;
+
   min-height: 100vh;
   max-width: none;
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  overflow: hidden;
+
   padding: 100px 40px 40px;
-}
 
-.hero-background {
-  position: absolute;
-  inset: 0;
-  background-image:
-    url("WhatsApp Image 2026-04-08 at 09.43.56.jpeg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-color: #000;
-  z-index: 0;
-}
+  background: transparent;
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0,0,0,0.85) 25%,
-    rgba(0,0,0,0.25) 100%
-  );
-  z-index: 1;
+  isolation: auto;
+  overflow: visible;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
+
   max-width: 600px;
 }
 
 .hero h2 {
   text-align: left;
+
   font-size: clamp(2rem, 5vw, 3rem);
   line-height: 1.2;
-  color: white;
+
+  color: #fff;
   margin-bottom: 20px;
 }
 
@@ -130,60 +208,121 @@ nav a:hover {
   line-height: 1.7;
 }
 
+
+/* =========================================
+   BOTÃO VER PROJETOS
+========================================= */
+
 .btn {
   display: inline-block;
+
   margin-top: 25px;
   padding: 13px 25px;
+
   background: #00ffcc;
   color: #000;
+
   text-decoration: none;
   border-radius: 7px;
   font-weight: bold;
+
   transition: 0.3s;
 }
 
 .btn:hover {
   background: #00ccaa;
   transform: translateY(-3px);
+
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
 }
 
-/* GRID */
+
+/* =========================================
+   SEÇÕES DO PORTFÓLIO
+========================================= */
+
+#skills,
+#projects,
+#contact {
+  position: relative;
+  z-index: 1;
+
+  background: transparent;
+}
+
+
+/* =========================================
+   GRID RESPONSIVO
+========================================= */
+
 .grid {
   display: grid;
+
   grid-template-columns:
     repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+
   gap: 25px;
+
   align-items: start;
 }
 
-/* CARTÕES */
+
+/* =========================================
+   CARTÕES
+========================================= */
+
 .card {
-  background: #111;
+  position: relative;
+
+  background: rgba(17, 17, 17, 0.90);
+
   padding: 25px;
+
   border-radius: 12px;
-  border: 1px solid #252525;
-  transition: 0.3s;
+  border: 1px solid #303030;
+
   min-width: 0;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .card:hover {
   border-color: #00ffcc;
-  box-shadow: 0 0 20px rgba(0,255,204,0.2);
+
+  box-shadow:
+    0 0 20px rgba(0, 255, 204, 0.20);
+
+  transform: translateY(-5px);
 }
 
 .card h3 {
   color: #00ffcc;
+
   margin-bottom: 20px;
   font-size: 1.25rem;
 }
 
-/* HABILIDADES */
+
+/* =========================================
+   HABILIDADES EXPANSÍVEIS
+========================================= */
+
 .skill-item {
-  background: #191919;
+  background: rgba(25, 25, 25, 0.96);
+
   border: 1px solid #333;
   border-radius: 10px;
+
   margin-top: 12px;
+
   overflow: hidden;
+
   transition: border-color 0.3s;
 }
 
@@ -191,17 +330,27 @@ nav a:hover {
   border-color: #00ffcc;
 }
 
+
+/* BOTÃO DA HABILIDADE */
+
 .skill-toggle {
   width: 100%;
+
   padding: 15px;
+
   background: transparent;
   color: #fff;
+
   border: none;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 10px;
+
   cursor: pointer;
+
   text-align: left;
   font-size: 15px;
   font-weight: bold;
@@ -218,20 +367,33 @@ nav a:hover {
 
 .skill-toggle span {
   color: #00ffcc;
+
   font-size: 24px;
+
   flex-shrink: 0;
 }
 
-/* INFORMAÇÕES FECHADAS */
+
+/* =========================================
+   CONTEÚDO FECHADO
+========================================= */
+
 .skill-content {
   display: none;
+
   padding: 0 15px 18px;
+
   border-top: 1px solid #333;
 }
 
-/* INFORMAÇÕES ABERTAS */
+
+/* =========================================
+   CONTEÚDO ABERTO
+========================================= */
+
 .skill-item.active .skill-content {
   display: block;
+
   animation: expandir 0.3s ease;
 }
 
@@ -240,23 +402,34 @@ nav a:hover {
     opacity: 0;
     transform: translateY(-8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+
+/* =========================================
+   DESCRIÇÕES DOS CURSOS
+========================================= */
+
 .skill-content h4 {
   color: #00ffcc;
+
   margin: 15px 0 10px;
+
   font-size: 15px;
 }
 
 .skill-content p {
   color: #ccc;
+
   line-height: 1.6;
   margin-bottom: 12px;
+
   font-size: 14px;
+
   overflow-wrap: anywhere;
 }
 
@@ -264,87 +437,142 @@ nav a:hover {
   color: #fff;
 }
 
-/* ÁREA DO CERTIFICADO */
+
+/* =========================================
+   CERTIFICADOS
+========================================= */
+
 .certificate-area {
   display: flex;
   align-items: center;
+
   gap: 12px;
   flex-wrap: wrap;
+
   margin-top: 18px;
 }
 
-/* MINIATURA DO CERTIFICADO */
+
+/* =========================================
+   MINIATURA DO CERTIFICADO
+========================================= */
+
 .certificate-preview {
   position: relative;
+
   width: 78px;
   height: 100px;
+
   background: #252525;
+
   border: 1px solid #555;
   border-radius: 6px;
+
   overflow: hidden;
   flex-shrink: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   transition: 0.3s;
 }
 
 .certificate-preview:hover {
   transform: scale(1.06);
+
   border-color: #00ffcc;
-  box-shadow: 0 0 12px rgba(0,255,204,0.3);
+
+  box-shadow:
+    0 0 12px rgba(0, 255, 204, 0.3);
 }
 
-/* APARECE QUANDO NÃO HÁ IMAGEM */
+
+/* QUANDO NÃO EXISTE MINIATURA */
+
 .preview-fallback {
   color: #00ffcc;
+
   font-size: 18px;
   font-weight: bold;
+
   letter-spacing: 1px;
 }
 
-/* IMAGEM REAL DO CERTIFICADO */
+
+/* IMAGEM DO CERTIFICADO */
+
 .certificate-preview img {
   position: absolute;
+
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   object-fit: contain;
+
   background: #fff;
 }
 
-/* BOTÃO DO PDF */
+
+/* =========================================
+   BOTÃO VISUALIZAR PDF
+========================================= */
+
 .certificate-link {
   display: inline-block;
+
   padding: 11px 14px;
+
   background: #00ffcc;
   color: #000;
+
   border-radius: 7px;
+
   text-decoration: none;
+
   font-size: 13px;
   font-weight: bold;
+
   transition: 0.3s;
+
   text-align: center;
 }
 
 .certificate-link:hover {
   background: #00ccaa;
+
   transform: translateY(-2px);
 }
 
-/* LINKS DOS PROJETOS E CONTATOS */
+
+/* =========================================
+   PROJETOS
+========================================= */
+
 #projects .card p {
   color: #ccc;
+
   line-height: 1.6;
   margin-bottom: 18px;
+
   overflow-wrap: anywhere;
 }
+
+
+/* =========================================
+   LINKS DE PROJETOS E CONTATOS
+========================================= */
 
 #projects .card a,
 #contact .card a {
   display: inline-block;
+
   color: #00ffcc;
+
   text-decoration: none;
+
   overflow-wrap: anywhere;
 }
 
@@ -353,52 +581,147 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* BOTÃO FLUTUANTE */
+
+/* =========================================
+   WHATSAPP FLUTUANTE
+========================================= */
+
 .whatsapp {
   position: fixed;
+
   right: 20px;
   bottom: 20px;
+
   width: 50px;
   height: 50px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   background: #00ffcc;
   color: #000;
+
   border-radius: 50%;
+
   font-weight: bold;
   text-decoration: none;
+
   z-index: 1000;
-  box-shadow: 0 0 15px rgba(0,255,204,0.3);
+
+  box-shadow:
+    0 0 15px rgba(0, 255, 204, 0.3);
+
+  transition: 0.3s;
 }
 
-/* RODAPÉ */
+.whatsapp:hover {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 0 25px rgba(0, 255, 204, 0.5);
+}
+
+
+/* =========================================
+   RODAPÉ
+========================================= */
+
 footer {
+  position: relative;
+  z-index: 1;
+
   text-align: center;
+
   padding: 30px;
+
   border-top: 1px solid #222;
+
   color: #777;
 }
 
-/* CELULARES */
+
+/* =========================================
+   AJUSTES PARA TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    padding: 110px 30px 50px;
+  }
+
+  .hero-content {
+    max-width: 500px;
+  }
+
+  body::before {
+    background-position: right center;
+    opacity: 0.65;
+  }
+
+  .card {
+    background: rgba(17, 17, 17, 0.93);
+  }
+}
+
+
+/* =========================================
+   AJUSTES PARA CELULARES
+========================================= */
+
 @media (max-width: 600px) {
+
+  /* MENU */
 
   nav {
     flex-direction: column;
+
     gap: 12px;
+
     padding: 15px;
+  }
+
+  nav h1 {
+    font-size: 1.5rem;
   }
 
   .nav-links {
     justify-content: center;
+
     gap: 14px;
+
     font-size: 13px;
   }
 
+
+  /* FOTO CENTRALIZADA */
+
+  body::before {
+    background-position: center center;
+
+    background-size: auto 100vh;
+
+    opacity: 0.35;
+
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+
+  /* PÁGINA INICIAL */
+
   .hero {
     padding: 150px 20px 50px;
+
     justify-content: center;
     text-align: center;
+
+    min-height: 100vh;
+  }
+
+  .hero-content {
+    max-width: 100%;
   }
 
   .hero h2 {
@@ -406,35 +729,72 @@ footer {
     font-size: 2rem;
   }
 
-  .hero-overlay {
-    background: rgba(0,0,0,0.68);
+  .hero p {
+    font-size: 1rem;
   }
 
-  .hero-content {
-    max-width: 100%;
-  }
+
+  /* SEÇÕES */
 
   section {
     padding: 75px 15px;
-    scroll-margin-top: 110px;
+
+    scroll-margin-top: 120px;
   }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+
+
+  /* CARTÕES */
 
   .card {
     padding: 20px;
+
+    background: rgba(17, 17, 17, 0.94);
   }
+
+
+  /* MINIATURA DO CERTIFICADO */
 
   .certificate-preview {
     width: 70px;
     height: 90px;
   }
+
+
+  /* BOTÃO WHATSAPP */
+
+  .whatsapp {
+    right: 15px;
+    bottom: 15px;
+
+    width: 48px;
+    height: 48px;
+  }
+
 }
 
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
 
   .skill-item.active .skill-content {
     animation: none;
+  }
+
+  .card,
+  .btn,
+  .whatsapp,
+  .certificate-preview {
+    transition: none;
   }
 }
