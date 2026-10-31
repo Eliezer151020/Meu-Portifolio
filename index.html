@@ -1,17 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Eliezer Silva | Fullstack Developer</title>
-<link rel="stylesheet" href="meu style.css">
-<script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Eliezer Silva | Fullstack Developer</title>
+
+  <link rel="stylesheet" href="meu style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
 
+<!-- NAVEGAÇÃO -->
 <nav>
   <h1>Eliezer</h1>
-  <div>
+
+  <div class="nav-links">
     <a href="#home">Início</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projetos</a>
@@ -19,176 +26,724 @@
   </div>
 </nav>
 
-<section class="hero" id="home" style="position:relative;min-height:100vh;display:flex;align-items:center;padding:40px;overflow:hidden;">
+<!-- PÁGINA INICIAL -->
+<section class="hero" id="home">
 
-  <!-- FUNDO COMPLETO SEM CORTE -->
-  <div style="position:absolute;inset:0;background:url('WhatsApp Image 2026-04-08 at 09.43.56.jpeg') no-repeat center center/contain;background-color:#000;z-index:0;background-attachment:fixed;"></div>
+  <div class="hero-background"></div>
+  <div class="hero-overlay"></div>
 
-  <!-- OVERLAY PARA CONTRASTE -->
-  <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.2) 100%);z-index:0;"></div>
-
-  <!-- CONTEÚDO -->
-  <div style="position:relative;z-index:1;max-width:600px;">
-    <h2 style="font-size:3rem;line-height:1.2;">
-      Transformando ideias em <span>soluções digitais</span>
+  <div class="hero-content">
+    <h2>
+      Transformando ideias em
+      <span>soluções digitais</span>
     </h2>
 
-    <p style="margin-top:20px;color:#ccc;font-size:1.1rem;">
-      Desenvolvedor Fullstack especializado em criar sistemas modernos, rápidos e escaláveis.
+    <p>
+      Desenvolvedor Fullstack focado em criar
+      sistemas modernos, rápidos e escaláveis.
     </p>
 
-    <button class="btn" onclick="scrollToSection('projects')">Ver Projetos</button>
+    <a class="btn" href="#projects">
+      Ver Projetos
+    </a>
   </div>
-
-  <!-- PARTICULAS -->
-  <canvas id="particles" style="position:absolute;inset:0;z-index:0;"></canvas>
 
 </section>
 
+<!-- HABILIDADES -->
 <section id="skills">
+
   <h2>Habilidades</h2>
+
   <div class="grid">
-      
-<div class="card">
-  <h3>Front-end</h3>
 
-  <div class="skill-item">
-    <button class="skill-toggle" type="button">
-      HTML5 <span>+</span>
-    </button>
+    <!-- =========================== -->
+    <!-- FRONT-END -->
+    <!-- =========================== -->
 
-    <div class="skill-content">
-      <h4>Curso de HTML5</h4>
-      <p><strong>Instituição:</strong> Nome da instituição</p>
+    <div class="card">
+      <h3>Front-end</h3>
 
-      <p>
-        <strong>O que aprendi:</strong>
-        Estruturação de páginas, HTML semântico,
-        formulários, tabelas, links e imagens.
-      </p>
+      <!-- HTML E CSS JUNTOS -->
+      <div class="skill-item">
 
-      <a href="certificados/html5.pdf"
-         target="_blank" rel="noopener noreferrer">
-        Visualizar certificado
-      </a>
+        <button class="skill-toggle" type="button">
+          HTML5 + CSS3 <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Curso de HTML5 e CSS3</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Curso em Vídeo
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Estruturação de páginas HTML,
+            HTML semântico, formulários,
+            tabelas, links, imagens, estilização
+            com CSS, Flexbox e layouts responsivos.
+          </p>
+
+          <!-- CERTIFICADO HTML + CSS -->
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-html-css.png"
+                alt="Miniatura do certificado HTML e CSS"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-html5.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- JAVASCRIPT -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          JavaScript <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Curso de JavaScript</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Variáveis, funções, estruturas
+            condicionais, laços, eventos,
+            manipulação do DOM, JSON e Fetch API.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-javascript.png"
+                alt="Miniatura do certificado JavaScript"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-javascript.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- REACT -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          React <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Curso de React</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Componentes, propriedades,
+            estados, hooks e construção
+            de interfaces interativas.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-react.png"
+                alt="Miniatura do certificado React"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-react.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
-  </div>
 
-  <div class="skill-item">
-    <button class="skill-toggle" type="button">
-      CSS3 <span>+</span>
-    </button>
-
-    <div class="skill-content">
-      <h4>Curso de CSS3</h4>
-      <p><strong>Instituição:</strong> Nome da instituição</p>
-
-      <p>
-        <strong>O que aprendi:</strong>
-        Flexbox, CSS Grid, responsividade,
-        animações, cores e layouts modernos.
-      </p>
-
-      <a href="certificados/css3.pdf"
-         target="_blank" rel="noopener noreferrer">
-        Visualizar certificado
-      </a>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <button class="skill-toggle" type="button">
-      JavaScript <span>+</span>
-    </button>
-
-    <div class="skill-content">
-      <h4>Curso de JavaScript</h4>
-      <p><strong>Instituição:</strong> Nome da instituição</p>
-
-      <p>
-        <strong>O que aprendi:</strong>
-        Variáveis, funções, eventos,
-        manipulação do DOM e Fetch API.
-      </p>
-
-      <a href="certificados/javascript.pdf"
-         target="_blank" rel="noopener noreferrer">
-        Visualizar certificado
-      </a>
-    </div>
-  </div>
-
-  <div class="skill-item">
-    <button class="skill-toggle" type="button">
-      React <span>+</span>
-    </button>
-
-    <div class="skill-content">
-      <h4>Curso de React</h4>
-      <p><strong>Instituição:</strong> Nome da instituição</p>
-
-      <p>
-        <strong>O que aprendi:</strong>
-        Componentes, propriedades, estados
-        e desenvolvimento de interfaces.
-      </p>
-
-      <a href="certificados/react.pdf"
-         target="_blank" rel="noopener noreferrer">
-        Visualizar certificado
-      </a>
-    </div>
-  </div>
-</div>
-    </div>
+    <!-- =========================== -->
+    <!-- BACK-END -->
+    <!-- =========================== -->
 
     <div class="card">
       <h3>Back-end</h3>
-      <ul class="skills">
-        <li>PHP Moderno</li>
-        <li>POO PHP</li>
-        <li>MySQL</li>
-      </ul>
+
+      <!-- PHP MODERNO -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          PHP Moderno <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Curso de PHP</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Variáveis, funções, formulários,
+            sessões, validação de dados
+            e desenvolvimento de aplicações PHP.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-php.png"
+                alt="Miniatura do certificado PHP"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-php.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PHP POO -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          PHP POO <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Programação Orientada a Objetos</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Classes, objetos, encapsulamento,
+            herança, polimorfismo, interfaces
+            e organização de códigos PHP.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-php-poo.png"
+                alt="Miniatura do certificado PHP POO"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-php-poo.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- COMPOSER -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          Composer <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Gerenciamento de Dependências PHP</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Instalação de pacotes, gerenciamento
+            de dependências, Composer e autoload
+            de classes com PSR-4.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-composer.png"
+                alt="Miniatura do certificado Composer"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-composer.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- API REST -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          APIs REST <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Desenvolvimento de APIs REST</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Requisições HTTP, métodos GET,
+            POST, PUT e DELETE, JSON,
+            rotas, respostas e integração
+            entre front-end e back-end.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-api.png"
+                alt="Miniatura do certificado APIs REST"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-api.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
+
+    <!-- =========================== -->
+    <!-- BANCO DE DADOS -->
+    <!-- =========================== -->
+
+    <div class="card">
+      <h3>Banco de Dados</h3>
+
+      <!-- SQL -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          SQL <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Curso de SQL</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Consultas SELECT, INSERT, UPDATE,
+            DELETE, filtros, ordenação,
+            agrupamentos, JOINs e relacionamentos.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-sql.png"
+                alt="Miniatura do certificado SQL"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-sql.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MYSQL -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          MySQL <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Curso de MySQL</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Criação de bancos, tabelas,
+            chaves primárias e estrangeiras,
+            consultas, relacionamentos
+            e integração com PHP.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-mysql.png"
+                alt="Miniatura do certificado MySQL"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-mysql.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- POSTGRESQL -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          PostgreSQL <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Curso de PostgreSQL</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Consultas SQL, tipos de dados,
+            relacionamentos, índices,
+            transações e administração básica.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-postgresql.png"
+                alt="Miniatura do certificado PostgreSQL"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-postgresql.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================== -->
+    <!-- FERRAMENTAS -->
+    <!-- =========================== -->
 
     <div class="card">
       <h3>Ferramentas</h3>
-      <ul class="skills">
-        <li>Git & GitHub</li>
-        <li>WordPress</li>
-        <li>SEO</li>
-      </ul>
+
+      <!-- GIT E GITHUB -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          Git e GitHub <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Versionamento com Git e GitHub</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Controle de versões, commits,
+            branches, push, pull, repositórios
+            remotos e colaboração em projetos.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-git.png"
+                alt="Miniatura do certificado Git e GitHub"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-git.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WORDPRESS -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          WordPress <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Desenvolvimento com WordPress</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            Instalação e configuração,
+            criação de páginas, temas,
+            plugins e gerenciamento de conteúdo.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-wordpress.png"
+                alt="Miniatura do certificado WordPress"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-wordpress.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SEO -->
+      <div class="skill-item">
+
+        <button class="skill-toggle" type="button">
+          SEO <span>+</span>
+        </button>
+
+        <div class="skill-content">
+
+          <h4>Otimização para Mecanismos de Busca</h4>
+
+          <p>
+            <strong>Instituição:</strong>
+            Adicionar instituição
+          </p>
+
+          <p>
+            <strong>O que aprendi:</strong>
+            SEO on-page, títulos,
+            meta descriptions, estrutura
+            semântica, desempenho e
+            otimização de páginas web.
+          </p>
+
+          <div class="certificate-area">
+
+            <div class="certificate-preview">
+              <span class="preview-fallback">PDF</span>
+              <img
+                src="imagens/certificado-seo.png"
+                alt="Miniatura do certificado SEO"
+                loading="lazy">
+            </div>
+
+            <a href="PDF/certificado-seo.pdf"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="certificate-link">
+              Visualizar PDF
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
 
+<!-- PROJETOS DO GITHUB -->
 <section id="projects">
+
   <h2>Projetos</h2>
-  <div class="grid" id="repos"></div>
+
+  <div class="grid" id="repos">
+    <p>Carregando projetos...</p>
+  </div>
+
 </section>
 
+<!-- CONTATOS -->
 <section id="contact">
+
   <h2>Contato</h2>
+
   <div class="grid">
+
     <div class="card show">
-      <p>WhatsApp</p>
-      <a href="https://wa.me/5551997477650" target="_blank">Conversar</a>
+      <h3>WhatsApp</h3>
+      <a href="https://wa.me/5551997477650"
+         target="_blank"
+         rel="noopener noreferrer">
+        Conversar
+      </a>
     </div>
 
     <div class="card show">
-      <p>Instagram</p>
-      <a href="https://instagram.com/eliezer_silva5" target="_blank">Acessar</a>
+      <h3>Instagram</h3>
+      <a href="https://instagram.com/eliezer_silva5"
+         target="_blank"
+         rel="noopener noreferrer">
+        Acessar
+      </a>
     </div>
 
     <div class="card show">
-      <p>GitHub</p>
-      <a href="https://github.com/Eliezer151020" target="_blank">Ver Perfil</a>
+      <h3>GitHub</h3>
+      <a href="https://github.com/Eliezer151020"
+         target="_blank"
+         rel="noopener noreferrer">
+        Ver Perfil
+      </a>
     </div>
+
   </div>
 </section>
 
-<a class="whatsapp" href="https://wa.me/5551997477650" target="_blank">W</a>
+<!-- BOTÃO WHATSAPP -->
+<a class="whatsapp"
+   href="https://wa.me/5551997477650"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Conversar pelo WhatsApp">
+  W
+</a>
 
+<!-- RODAPÉ -->
 <footer>
   <p>© 2026 Eliezer Silva</p>
 </footer>

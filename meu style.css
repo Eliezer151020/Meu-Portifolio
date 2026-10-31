@@ -1,117 +1,190 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#0a0a0a;color:#fff;scroll-behavior:smooth}
 
-/* NAV */
-nav{
- position:fixed;top:0;width:100%;
- display:flex;justify-content:space-between;
- padding:20px 40px;background:rgba(0,0,0,0.8);
- backdrop-filter:blur(10px);z-index:1000
+/* CONFIGURAÇÕES GERAIS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
-nav h1{color:#00ffcc}
-nav a{margin-left:20px;color:#fff;text-decoration:none}
-nav a:hover{color:#00ffcc}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0a0a0a;
+  color: #fff;
+}
+
+a {
+  color: #00ffcc;
+}
+
+section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+  scroll-margin-top: 65px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #00ffcc;
+  font-size: 2rem;
+}
+
+/* NAVEGAÇÃO */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+nav h1 {
+  color: #00ffcc;
+  font-size: 1.7rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ffcc;
+}
 
 /* HERO */
-.hero{
- height:100vh;display:flex;flex-direction:column;
- justify-content:center;align-items:center;
- text-align:center;padding:20px
-}
-.hero h2{font-size:3rem}
-.hero span{color:#00ffcc}
-.hero p{margin-top:15px;color:#aaa}
-
-/* FOTO PERFIL AVANÇADA */
-.profile-wrapper{
- position:relative;
- width:170px;
- height:170px;
- margin-bottom:20px;
+.hero {
+  position: relative;
+  min-height: 100vh;
+  max-width: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  padding: 100px 40px 40px;
 }
 
-.profile-wrapper::before{
- content:"";
- position:absolute;
- inset:-5px;
- border-radius:50%;
- background:linear-gradient(45deg,#00ffcc,transparent,#00ffcc);
- animation:rotate 4s linear infinite;
- z-index:0;
+.hero-background {
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("WhatsApp Image 2026-04-08 at 09.43.56.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-color: #000;
+  z-index: 0;
 }
 
-.profile-wrapper img{
- width:100%;
- height:100%;
- border-radius:50%;
- object-fit:cover;
- object-position:50% 30%; /* ajusta o rosto */
- position:relative;
- z-index:1;
- border:3px solid #0a0a0a;
- box-shadow:0 0 20px #00ffcc;
- transition:0.4s;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,0.85) 25%,
+    rgba(0,0,0,0.25) 100%
+  );
+  z-index: 1;
 }
 
-.profile-wrapper img:hover{
- transform:scale(1.08);
- box-shadow:0 0 35px #00ffcc;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
 }
 
-@keyframes rotate{
- from{transform:rotate(0deg)}
- to{transform:rotate(360deg)}
+.hero h2 {
+  text-align: left;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.2;
+  color: white;
+  margin-bottom: 20px;
 }
 
-.btn{
- margin-top:20px;padding:12px 25px;
- background:#00ffcc;color:#000;border:none;
- cursor:pointer;border-radius:5px
+.hero span {
+  color: #00ffcc;
 }
 
-section{padding:100px 20px;max-width:1200px;margin:auto}
-h2{text-align:center;margin-bottom:40px;color:#00ffcc}
-
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
- gap:25px
+.hero p {
+  color: #ccc;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
-.card{
- background:#111;padding:25px;border-radius:12px;
- transition:.4s;opacity:0;transform:translateY(40px)
-}
-.card.show{opacity:1;transform:translateY(0)}
-.card:hover{transform:translateY(-10px);box-shadow:0 0 25px #00ffcc}
-
-.skills li{margin:8px 0;color:#ccc}
-
-/* FOOTER */
-footer{text-align:center;padding:30px;border-top:1px solid #222;color:#777}
-
-/* WHATS */
-.whatsapp{
- position:fixed;bottom:20px;right:20px;
- background:#00ffcc;color:#000;
- padding:15px;border-radius:50%;font-weight:bold
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 25px;
+  background: #00ffcc;
+  color: #000;
+  text-decoration: none;
+  border-radius: 7px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-
-@keyframes float{
-  0%{transform:translateY(0px)}
-  50%{transform:translateY(-15px)}
-  100%{transform:translateY(0px)}
+.btn:hover {
+  background: #00ccaa;
+  transform: translateY(-3px);
 }
 
-/* HABILIDADES EXPANSÍVEIS */
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: 25px;
+  align-items: start;
+}
 
+/* CARTÕES */
+.card {
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #252525;
+  transition: 0.3s;
+  min-width: 0;
+}
+
+.card:hover {
+  border-color: #00ffcc;
+  box-shadow: 0 0 20px rgba(0,255,204,0.2);
+}
+
+.card h3 {
+  color: #00ffcc;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+}
+
+/* HABILIDADES */
 .skill-item {
   background: #191919;
   border: 1px solid #333;
   border-radius: 10px;
   margin-top: 12px;
   overflow: hidden;
+  transition: border-color 0.3s;
 }
 
 .skill-item.active {
@@ -122,48 +195,246 @@ footer{text-align:center;padding:30px;border-top:1px solid #222;color:#777}
   width: 100%;
   padding: 15px;
   background: transparent;
-  color: white;
+  color: #fff;
   border: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
   cursor: pointer;
-  font-size: 16px;
+  text-align: left;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.skill-toggle:hover {
+  color: #00ffcc;
+}
+
+.skill-toggle:focus-visible {
+  outline: 2px solid #00ffcc;
+  outline-offset: -2px;
 }
 
 .skill-toggle span {
   color: #00ffcc;
   font-size: 24px;
+  flex-shrink: 0;
 }
 
-/* ESCONDE AS INFORMAÇÕES */
+/* INFORMAÇÕES FECHADAS */
 .skill-content {
   display: none;
-  padding: 15px;
+  padding: 0 15px 18px;
+  border-top: 1px solid #333;
 }
 
-/* MOSTRA SOMENTE AO CLICAR */
+/* INFORMAÇÕES ABERTAS */
 .skill-item.active .skill-content {
   display: block;
+  animation: expandir 0.3s ease;
+}
+
+@keyframes expandir {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .skill-content h4 {
   color: #00ffcc;
-  margin-bottom: 10px;
+  margin: 15px 0 10px;
+  font-size: 15px;
 }
 
 .skill-content p {
   color: #ccc;
-  margin-bottom: 12px;
   line-height: 1.6;
+  margin-bottom: 12px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
 }
 
-.skill-content a {
+.skill-content strong {
+  color: #fff;
+}
+
+/* ÁREA DO CERTIFICADO */
+.certificate-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+
+/* MINIATURA DO CERTIFICADO */
+.certificate-preview {
+  position: relative;
+  width: 78px;
+  height: 100px;
+  background: #252525;
+  border: 1px solid #555;
+  border-radius: 6px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.certificate-preview:hover {
+  transform: scale(1.06);
+  border-color: #00ffcc;
+  box-shadow: 0 0 12px rgba(0,255,204,0.3);
+}
+
+/* APARECE QUANDO NÃO HÁ IMAGEM */
+.preview-fallback {
+  color: #00ffcc;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* IMAGEM REAL DO CERTIFICADO */
+.certificate-preview img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+/* BOTÃO DO PDF */
+.certificate-link {
   display: inline-block;
+  padding: 11px 14px;
   background: #00ffcc;
   color: #000;
-  padding: 10px 15px;
-  border-radius: 6px;
+  border-radius: 7px;
   text-decoration: none;
+  font-size: 13px;
   font-weight: bold;
+  transition: 0.3s;
+  text-align: center;
+}
+
+.certificate-link:hover {
+  background: #00ccaa;
+  transform: translateY(-2px);
+}
+
+/* LINKS DOS PROJETOS E CONTATOS */
+#projects .card p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  overflow-wrap: anywhere;
+}
+
+#projects .card a,
+#contact .card a {
+  display: inline-block;
+  color: #00ffcc;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+#projects .card a:hover,
+#contact .card a:hover {
+  text-decoration: underline;
+}
+
+/* BOTÃO FLUTUANTE */
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #00ffcc;
+  color: #000;
+  border-radius: 50%;
+  font-weight: bold;
+  text-decoration: none;
+  z-index: 1000;
+  box-shadow: 0 0 15px rgba(0,255,204,0.3);
+}
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid #222;
+  color: #777;
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+
+  nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    gap: 14px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 150px 20px 50px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero h2 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .hero-overlay {
+    background: rgba(0,0,0,0.68);
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  section {
+    padding: 75px 15px;
+    scroll-margin-top: 110px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .certificate-preview {
+    width: 70px;
+    height: 90px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .skill-item.active .skill-content {
+    animation: none;
+  }
 }
